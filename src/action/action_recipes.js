@@ -1,7 +1,7 @@
-export function toggleRecipe(recipe) {
+export function toggleRecipe(id) {
   return {
     type: 'TOGGLE_RECIPE',
-    payload: recipe
+    id
   };
 }
 

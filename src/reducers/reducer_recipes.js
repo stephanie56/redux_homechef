@@ -18,8 +18,14 @@ function recipes(state, action) {
         newState.value = newState.value + 1;
         return newState;
     case 'TOGGLE_RECIPE':
-        newState.recipes.showRecipeItem = !action.payload.showRecipeItem;
-        return newState;
+        return state.recipes.map(recipe => {
+          if(recipe.id == action.id){
+            return {
+              ...recipe,
+              showRecipeItem: !recipe.showRecipeItem
+            };
+          }
+        });
     default:
       return newState;
   }
