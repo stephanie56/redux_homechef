@@ -17,6 +17,9 @@ function recipes(state, action) {
         newState.counter = newState.counter - 1;
         newState.value = newState.value + 1;
         return newState;
+    case 'TOGGLE_RECIPE':
+        newState.recipes.showRecipeItem = !action.payload;
+        return newState;
     default:
       return newState;
   }

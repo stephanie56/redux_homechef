@@ -12,7 +12,7 @@ class RecipeItem extends Component {
     return (
       <div className="recipe_item">
           <div className="recipe_header">
-            <h4>
+            <h4 onClick={this.props.toggleRecipe(this.props.showRecipeItem)}>
               {this.props.name}
             </h4>
           </div>

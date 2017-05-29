@@ -1,6 +1,7 @@
-export function incrementNum() {
+export function toggleRecipe(index) {
   return {
-    type: 'INCREMENT',
+    type: 'TOGGLE_RECIPE',
+    payload: index
   };
 }
 
