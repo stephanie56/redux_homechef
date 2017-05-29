@@ -5,8 +5,16 @@ export function toggleRecipe(id) {
   };
 }
 
-export function decrementNum() {
+export function addRecipe(item) {
   return {
-    type: 'DECREMENT',
+    type: 'ADD_RECIPE',
+    item
+  };
+}
+
+export function removeRecipe(index) {
+  return {
+    type: 'REMOVE_RECIPE',
+    index
   };
 }

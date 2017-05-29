@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // actions
-import { toggleRecipe } from '.././action/action_recipes';
+import { toggleRecipe, removeRecipe } from '.././action/action_recipes';
 
 // components
 import RecipeItem from './RecipeItem';
@@ -21,6 +21,7 @@ class RecipeList extends Component {
                     ingredients={recipe.ingredients}
                     showRecipeItem={recipe.showRecipeItem}
                     toggleRecipe={this.props.toggleRecipe.bind(this)}
+                    removeRecipe={this.props.removeRecipe.bind(this)}
                   />
               );
             })
@@ -39,6 +40,7 @@ const mapStateToProps = (state) => ({
 // methods that response to events triggered by users
 const mapDispatchToProps = (dispatch) => ({
     toggleRecipe: () => dispatch(toggleRecipe()),
+    removeRecipe: () => dispatch(removeRecipe()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeList);
