@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
+        <div className="app">
           <h1>React-Redux RecipeBox</h1>
           <RecipeList />
         </div>

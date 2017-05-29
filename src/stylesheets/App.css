@@ -1,11 +1,17 @@
 body {
   margin:0;
   padding:0;
+  font-family: sans-serif;
 }
 
 /** ======== Global ========= **/
 .hidden {
   display:none;
+}
+
+h1 {
+  text-align:center;
+  font-weight:normal;
 }
 
 input[type="button"],input[type="submit"] {
@@ -34,40 +40,41 @@ input[type="text"] {
 }
 
 /** ======== RecipeBox ========= **/
-.recipeBox {
+.recipe_item {
   margin-bottom: 10px;
 }
 
-.boxHeader {
+.recipe_header {
   background-color:#DFF0D8;
   border:1px solid #91aa86;
   padding:10px;
 }
 
-.boxHeader a {
-  text-decoration: none;
+.recipe_header h4 {
   color:#5a8248;
+  cursor:pointer;
+  margin:0;
 }
 
 /** ======== RecipeBox Content ========= **/
-.boxContent {
+.recipe_content {
   background-color:white;
   padding:14px;
   margin-top:20px;
 }
 
-.boxContent h2 {
+.recipe_content h2 {
   text-align: center;
   font-size: 1.2em;
   font-weight: 400;
 }
 
-.boxContent ul {
+.recipe_content ul {
   list-style: none;
   padding:0;
 }
 
-.boxContent li {
+.recipe_content li {
   margin-bottom:5px;
   padding:10px;
   border:1px grey solid;

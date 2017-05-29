@@ -3,7 +3,7 @@ module.exports = [
     id: 1,
     name: 'Caramelized Onion Pork Chops',
     ingredients: ['1 tablespoon vegetable oil', '4 pork loin chops', '3 teaspoons seasoning salt', '2 teaspoons black pepper'],
-    showRecipeItem: false
+    showRecipeItem: true
   },
   {
     id: 2,

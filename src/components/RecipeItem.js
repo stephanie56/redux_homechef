@@ -5,16 +5,16 @@ class RecipeItem extends Component {
 
   render() {
     let contentClasses = className({
-        boxContent: true,
+        recipe_content: true,
         hidden: !this.props.showRecipeItem, // hidden: true
       });
 
     return (
       <div className="recipe_item">
-          <div className="boxHeader">
-            <a href="#" >
+          <div className="recipe_header">
+            <h4>
               {this.props.name}
-            </a>
+            </h4>
           </div>
 
           <div className = {contentClasses}>
