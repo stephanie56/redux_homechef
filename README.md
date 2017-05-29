@@ -1,12 +1,12 @@
 # React-Redux RecipeBox
 
-An application built using React and Redux. This project is bootstrapped with create-react-app. 
+An application built using React and Redux. This project is bootstrapped with create-react-app.
 
 ### To-Dos
 1. App Structure
 - [x] RecipeList (displayed): an index view where the names of all the recipes are visible.
 
-- [ ] RecipeItem (hidden): a recipe that has names and ingredients.
+- [x] RecipeItem (hidden): a recipe that has names and ingredients.
   - [ ] RecipeBox: a form of text inputs where users change values of existed recipe.
   - [ ] EditRecipe: a button to update existed recipes.
   - [ ] DeleteRecipe: a button to remove existed recipes.

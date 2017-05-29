@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-
-// actions
-// import { incrementNum, decrementNum } from '.././action/action_counter'
+import className from 'classnames';
 
 class RecipeItem extends Component {
+
   render() {
+    let contentClasses = className({
+        boxContent: true,
+        hidden: !this.props.showRecipeItem, // hidden: true
+      });
+
     return (
-      <div className="recipeBox">
+      <div className="recipe_item">
           <div className="boxHeader">
             <a href="#" >
               {this.props.name}
             </a>
           </div>
 
-          <div>
+          <div className = {contentClasses}>
             <h2>Ingredients</h2>
             <hr />
             <ul>

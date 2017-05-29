@@ -10,20 +10,19 @@ import RecipeItem from './RecipeItem';
 class RecipeList extends Component {
   render() {
     return (
-        <ul className="recipe_list">
+        <div className="recipe_list">
           {
               this.props.recipes.map((recipe) => {
               return (
-                <li key={recipe.id}>
                   <RecipeItem
                     name={recipe.name}
                     ingredients={recipe.ingredients}
+                    showRecipeItem={recipe.showRecipeItem}
                   />
-                </li>
               );
             })
           }
-        </ul>
+        </div>
     );
   }
 }
