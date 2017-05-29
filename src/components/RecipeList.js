@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 // actions
 import { incrementNum, decrementNum } from '.././action/action_counter'
 
+// components
+import RecipeItem from './RecipeItem';
+
 class RecipeList extends Component {
   render() {
     return (
@@ -12,7 +15,10 @@ class RecipeList extends Component {
               this.props.recipes.map((recipe) => {
               return (
                 <li key={recipe.id}>
-                  {recipe.name}
+                  <RecipeItem
+                    name={recipe.name}
+                    ingredients={recipe.ingredients}
+                  />
                 </li>
               );
             })
