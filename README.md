@@ -2,6 +2,13 @@
 
 An application built using React and Redux. This project is bootstrapped with create-react-app.
 
+### Get Started
+
+- git clone this repo https://github.com/stephanie56/redux_recipebox.git
+- install node
+- run `npm install`
+- run `npm start` to start server on localhost:3000
+
 ### To-Dos
 1. App Structure
 - [x] RecipeList (displayed): an index view where the names of all the recipes are visible.
