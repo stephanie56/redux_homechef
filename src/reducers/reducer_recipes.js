@@ -14,6 +14,8 @@ function recipes(state, action) {
         return newState;
     case 'REMOVE_RECIPE':
         newState.recipes.splice(action.index, 1);
+        console.log('newState:', newState);
+        console.log('state:', state);
         return newState;
     // case 'TOGGLE_RECIPE':
     //     return state.recipes.map(recipe => {
