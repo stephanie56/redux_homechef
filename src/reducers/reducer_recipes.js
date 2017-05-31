@@ -7,16 +7,12 @@ const initialState = {
 function recipes(state, action) {
   if(!state) state = initialState;
   // make a copy of the state
-  const newState = { ...state };
   switch (action.type) {
     case 'ADD_RECIPE':
-        newState.recipes.concat(action.item);
-        return newState;
+        return {...state, recipes: state.recipes.concat(action.item)};
     case 'REMOVE_RECIPE':
-        newState.recipes.splice(action.index, 1);
-        console.log('newState:', newState);
+        return {...state, recipes: state.recipes.splice(action.index, 1)};
         console.log('state:', state);
-        return newState;
     // case 'TOGGLE_RECIPE':
     //     return state.recipes.map(recipe => {
     //       if(recipe.id == action.id){
@@ -24,7 +20,7 @@ function recipes(state, action) {
     //       }
     //     });
     default:
-      return newState;
+      return state;
   }
 }
 
