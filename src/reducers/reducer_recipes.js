@@ -9,9 +9,9 @@ function recipes(state, action) {
   // make a copy of the state
   switch (action.type) {
     case 'ADD_RECIPE':
-        return {...state, recipes: state.recipes.concat(action.item)};
+        return {...state, recipes: [...state.recipes, action.item]};
     case 'REMOVE_RECIPE':
-        return {...state, recipes: state.recipes.splice(action.index, 1)};
+        return {...state, recipes: [...state.recipes.slice(0, action.index), ...state.recipes.slice(action.index)]};
         console.log('state:', state);
     // case 'TOGGLE_RECIPE':
     //     return state.recipes.map(recipe => {
