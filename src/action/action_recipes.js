@@ -5,6 +5,13 @@ export function toggleRecipe(id) {
   };
 }
 
+export function likeRecipe(id) {
+  return {
+    type: 'LIKE_RECIPE',
+    id
+  };
+}
+
 export function addRecipe(item) {
   return {
     type: 'ADD_RECIPE',

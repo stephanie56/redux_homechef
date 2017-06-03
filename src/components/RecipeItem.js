@@ -31,6 +31,7 @@ class RecipeItem extends Component {
             </ul>
             <input type="button" value="Delete" onClick={() => this.props.onDelete(this.props.index)}/>
             <input type="button" value="Edit" />
+            <input type="button" value="Like" onClick={() => this.props.onLike(this.props.id)}/>
           </div>
         </div>
     );

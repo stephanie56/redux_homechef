@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // actions
-import { toggleRecipe, removeRecipe } from '.././action/action_recipes';
+import { toggleRecipe, likeRecipe, removeRecipe } from '.././action/action_recipes';
 
 // components
 import RecipeItem from './RecipeItem';
@@ -11,14 +11,18 @@ class RecipeList extends Component {
 
   // methods
   _handleToggle(id){
-    console.log("current recipe id is: ", id);
     this.props.toggleRecipe(id);
   }
 
+  _handleFavorite(id){
+    this.props.likeRecipe(id);
+  }
+
   _handleDelete(index){
-    console.log("current recipe index is: ", index);
     this.props.removeRecipe(index);
   }
+
+
 
   render() {
     return (
@@ -34,6 +38,7 @@ class RecipeList extends Component {
                     ingredients={recipe.ingredients}
                     showRecipeItem={recipe.showRecipeItem}
                     onToggle={this._handleToggle.bind(this)}
+                    onLike={this._handleFavorite.bind(this)}
                     onDelete={this._handleDelete.bind(this)}
                   />
               );
@@ -53,6 +58,7 @@ const mapStateToProps = (state) => ({
 // methods that response to events triggered by users
 const mapDispatchToProps = (dispatch) => ({
     toggleRecipe: (id) => dispatch(toggleRecipe(id)),
+    likeRecipe: (id) => dispatch(likeRecipe(id)),
     removeRecipe: (index) => dispatch(removeRecipe(index)),
 });
 

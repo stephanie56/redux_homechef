@@ -27,8 +27,19 @@ function recipes(state, action) {
           return {
             ...recipe,
             showRecipeItem: recipe.id === action.id ? !recipe.showRecipeItem : recipe.showRecipeItem
-          };
-          })};
+            };
+          })
+        };
+    case 'LIKE_RECIPE':
+        return {
+          ...state,
+          recipes: state.recipes.map((recipe) => {
+            return {
+              ...recipe,
+              favorite: recipe.id === action.id ? !recipe.favorite : recipe.favorite
+            };
+          })
+        };
     default:
       return state;
   }
