@@ -9,15 +9,26 @@ function recipes(state, action) {
   // make a copy of the state
   switch (action.type) {
     case 'ADD_RECIPE':
-        return {...state, recipes: [...state.recipes, action.item]};
+        return {
+          ...state,
+          recipes: [...state.recipes, action.item]
+        };
     case 'REMOVE_RECIPE':
-        return {...state, recipes: [...state.recipes.slice(0, action.index), ...state.recipes.slice(action.index + 1)]};
+        return {
+          ...state,
+          recipes: [
+            ...state.recipes.slice(0, action.index),
+            ...state.recipes.slice(action.index + 1)]
+          };
     case 'TOGGLE_RECIPE':
         return {
           ...state,
           recipes: state.recipes.map((recipe) => {
-          if(recipe.id === action.id){
-          return recipe.showRecipeItem = !recipe.showRecipeItem};
+          return {
+            ...recipe,
+            // showRecipeItem: recipe.id === action.id ? false : true
+            showRecipeItem: false
+          };
           })};
     default:
       return state;
