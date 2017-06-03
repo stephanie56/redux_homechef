@@ -9,7 +9,7 @@ module.exports = [
     id: 2,
     name: 'Meatloaf',
     ingredients: ['4 tablespoon olive oil', '1 pound ground beef', '2 eggs'],
-    showRecipeItem: false
+    showRecipeItem: true
   },
   {
     id: 3,

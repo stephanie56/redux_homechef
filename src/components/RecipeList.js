@@ -8,6 +8,19 @@ import { toggleRecipe, removeRecipe } from '.././action/action_recipes';
 import RecipeItem from './RecipeItem';
 
 class RecipeList extends Component {
+
+  // methods
+  _handleToggle(id){
+    console.log("current recipe id is: ", id);
+    this.props.toggleRecipe(id);
+    console.log(this.props.toggleRecipe(id));
+  }
+
+  _handleDelete(index){
+    console.log("current recipe index is: ", index);
+    this.props.removeRecipe(index);
+  }
+
   render() {
     return (
         <div className="recipe_list">
@@ -18,10 +31,11 @@ class RecipeList extends Component {
                     key={index}
                     index={index}
                     name={recipe.name}
+                    id={recipe.id}
                     ingredients={recipe.ingredients}
                     showRecipeItem={recipe.showRecipeItem}
-                    toggleRecipe={this.props.toggleRecipe.bind(this)}
-                    removeRecipe={this.props.removeRecipe.bind(this)}
+                    toggleRecipe={this._handleToggle.bind(this)}
+                    removeRecipe={this._handleDelete.bind(this)}
                   />
               );
             })
@@ -39,8 +53,8 @@ const mapStateToProps = (state) => ({
 
 // methods that response to events triggered by users
 const mapDispatchToProps = (dispatch) => ({
-    toggleRecipe: () => dispatch(toggleRecipe()),
-    removeRecipe: () => dispatch(removeRecipe()),
+    toggleRecipe: (id) => dispatch(toggleRecipe(id)),
+    removeRecipe: (index) => dispatch(removeRecipe(index)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeList);

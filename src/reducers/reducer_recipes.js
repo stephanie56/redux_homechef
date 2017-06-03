@@ -26,8 +26,8 @@ function recipes(state, action) {
           recipes: state.recipes.map((recipe) => {
           return {
             ...recipe,
-            // showRecipeItem: recipe.id === action.id ? false : true
-            showRecipeItem: false
+            showRecipeItem: recipe.id === action.id ? !recipe.showRecipeItem : recipe.showRecipeItem
+            // showRecipeItem: false
           };
           })};
     default:
