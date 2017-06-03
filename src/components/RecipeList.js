@@ -13,7 +13,6 @@ class RecipeList extends Component {
   _handleToggle(id){
     console.log("current recipe id is: ", id);
     this.props.toggleRecipe(id);
-    console.log(this.props.toggleRecipe(id));
   }
 
   _handleDelete(index){
@@ -34,8 +33,8 @@ class RecipeList extends Component {
                     id={recipe.id}
                     ingredients={recipe.ingredients}
                     showRecipeItem={recipe.showRecipeItem}
-                    toggleRecipe={this._handleToggle.bind(this)}
-                    removeRecipe={this._handleDelete.bind(this)}
+                    onToggle={this._handleToggle.bind(this)}
+                    onDelete={this._handleDelete.bind(this)}
                   />
               );
             })

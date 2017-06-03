@@ -12,7 +12,7 @@ class RecipeItem extends Component {
     return (
       <div className="recipe_item">
           <div className="recipe_header">
-            <h4 onClick={() => this.props.toggleRecipe(this.props.id)}>
+            <h4 onClick={() => this.props.onToggle(this.props.id)}>
               {this.props.name}
             </h4>
           </div>
@@ -29,7 +29,7 @@ class RecipeItem extends Component {
                 })
               }
             </ul>
-            <input type="button" value="Delete" onClick={() => this.props.removeRecipe(this.props.index)}/>
+            <input type="button" value="Delete" onClick={() => this.props.onDelete(this.props.index)}/>
             <input type="button" value="Edit" />
           </div>
         </div>

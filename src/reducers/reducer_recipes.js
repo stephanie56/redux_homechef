@@ -27,7 +27,6 @@ function recipes(state, action) {
           return {
             ...recipe,
             showRecipeItem: recipe.id === action.id ? !recipe.showRecipeItem : recipe.showRecipeItem
-            // showRecipeItem: false
           };
           })};
     default:
