@@ -14,6 +14,11 @@ function recipes(state, action) {
           ...state,
           recipes: [...state.recipes, action.item]
         };
+    case 'EDIT_RECIPE':
+        return {
+          ...state,
+          recipes: [...state.recipes, action.item]
+        };
     case 'REMOVE_RECIPE':
         return {
           ...state,

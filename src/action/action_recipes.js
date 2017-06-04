@@ -21,6 +21,13 @@ export function addRecipe(item) {
   };
 }
 
+export function editRecipe(item) {
+  return {
+    type: 'EDIT_RECIPE',
+    item
+  };
+}
+
 export function removeRecipe(index) {
   return {
     type: 'REMOVE_RECIPE',
