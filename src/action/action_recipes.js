@@ -21,10 +21,11 @@ export function addRecipe(item) {
   };
 }
 
-export function editRecipe(item) {
+export function editRecipe(item, index) {
   return {
     type: 'EDIT_RECIPE',
-    item
+    item,
+    index
   };
 }
 

@@ -17,7 +17,10 @@ function recipes(state, action) {
     case 'EDIT_RECIPE':
         return {
           ...state,
-          recipes: [...state.recipes, action.item]
+          recipes: [
+            ...state.recipes.slice(0, action.index),
+            action.item,
+            ...state.recipes.slice(action.index + 1)]
         };
     case 'REMOVE_RECIPE':
         return {

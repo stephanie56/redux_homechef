@@ -34,8 +34,8 @@ class Form extends Component {
       name: this.state.name,
       ingredients: this.state.ingredients
     };
-    // console.log(form);
-    this.props.updateRecipe(form);
+    console.log(this.props.index);
+    this.props.updateRecipe(form, this.props.index);
   }
 
   render() {

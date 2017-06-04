@@ -8,8 +8,8 @@ import Form from '../components/Form';
 
 class EditForm extends Component {
 
-  _editRecipe(item){
-    this.props.editRecipe(item);
+  _editRecipe(item, index){
+    this.props.editRecipe(item, index);
   }
 
   _toggleEditForm(id){
@@ -19,6 +19,7 @@ class EditForm extends Component {
   render(){
     return(
         <Form
+          index={this.props.index}
           updateRecipe={this._editRecipe.bind(this)}
           toggleForm={this._toggleEditForm.bind(this)}
           showForm={this.props.showEditForm}
@@ -39,7 +40,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleEditForm: (id) => dispatch(toggleEditForm(id)),
-    editRecipe: (item) => dispatch(editRecipe(item))
+    editRecipe: (item, index) => dispatch(editRecipe(item, index))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(EditForm);
