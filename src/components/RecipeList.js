@@ -41,6 +41,7 @@ class RecipeList extends Component {
                     id={recipe.id}
                     ingredients={recipe.ingredients}
                     showRecipeItem={recipe.showRecipeItem}
+                    showEditForm={recipe.showEditForm}
                     onToggle={this._handleToggle.bind(this)}
                     onToggleEdit={this._handleToggleEdit.bind(this)}
                     onLike={this._handleFavorite.bind(this)}

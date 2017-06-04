@@ -16,6 +16,7 @@ class RecipeItem extends Component {
           <EditForm
             name={this.props.name}
             ingredients={this.props.ingredients}
+            showEditForm={this.props.showEditForm}
           />
           <div className="recipe_header">
             <h4 onClick={() => this.props.onToggle(this.props.id)}>

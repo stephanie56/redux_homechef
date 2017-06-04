@@ -29,15 +29,9 @@ class EditForm extends Component {
   };
 }
 
-const mapStateToProps = (state) => {
-  return {
-    showEditForm: state.showEditForm,
-  }
-}
-
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleEditForm: () => dispatch(toggleEditForm())
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(EditForm);
+export default connect(mapDispatchToProps)(EditForm);
