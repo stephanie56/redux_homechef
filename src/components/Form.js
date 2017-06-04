@@ -5,8 +5,8 @@ class Form extends Component {
   constructor(props){
     super(props);
     this.state={
-      name: "",
-      ingredients: [],
+      name: this.props.name,
+      ingredients: this.props.ingredients,
     }
   }
 

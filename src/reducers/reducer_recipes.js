@@ -3,7 +3,6 @@ import data from '../data/data';
 const initialState = {
   recipes: data,
   showAddForm: false, // default: false
-  showEditForm: true, // default: false
 }
 
 function recipes(state, action) {
@@ -46,7 +45,17 @@ function recipes(state, action) {
       return {
         ...state,
         showAddForm: !state.showAddForm
-      }
+      };
+    case 'TOGGLE_EIDIT_FORM':
+      return {
+        ...state,
+        recipes: state.recipes.map((recipe) => {
+        return {
+          ...recipe,
+          showEditForm: recipe.id === action.id ? !recipe.showEditForm : recipe.showEditForm
+          };
+        })
+      };
     default:
       return state;
   }
