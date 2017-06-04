@@ -12,8 +12,8 @@ class EditForm extends Component {
     this.props.addRecipe(item);
   }
 
-  _toggleEditForm(){
-    this.props.toggleEditForm();
+  _toggleEditForm(id){
+    this.props.toggleEditForm(id);
   }
 
   render(){
@@ -29,9 +29,15 @@ class EditForm extends Component {
   };
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    toggleEditForm: () => dispatch(toggleEditForm())
+    recipes: state.recipes
   }
 }
-export default connect(mapDispatchToProps)(EditForm);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleEditForm: (id) => dispatch(toggleEditForm(id))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(EditForm);

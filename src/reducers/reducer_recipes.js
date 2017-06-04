@@ -46,7 +46,7 @@ function recipes(state, action) {
         ...state,
         showAddForm: !state.showAddForm
       };
-    case 'TOGGLE_EIDIT_FORM':
+    case 'TOGGLE_EDIT_FORM':
       return {
         ...state,
         recipes: state.recipes.map((recipe) => {
