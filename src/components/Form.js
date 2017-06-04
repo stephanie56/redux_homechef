@@ -36,7 +36,7 @@ class Form extends Component {
   render() {
     let formClasses = className({
       recipeform: true,
-      hidden: !this.props.showAddForm
+      hidden: !this.props.showForm
     });
 
     return(

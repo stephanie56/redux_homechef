@@ -36,7 +36,7 @@ export function toggleNewForm() {
   }
 }
 
-export function toggleAddForm() {
+export function toggleEditForm() {
   return {
     type: 'TOGGLE_EIDIT_FORM'
   }

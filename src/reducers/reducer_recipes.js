@@ -2,7 +2,7 @@ import data from '../data/data';
 
 const initialState = {
   recipes: data,
-  showAddForm: true, // default: false
+  showAddForm: false, // default: false
   showEditForm: true, // default: false
 }
 
