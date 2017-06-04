@@ -5,8 +5,9 @@ class Form extends Component {
   constructor(props){
     super(props);
     this.state={
-      name: "",
-      ingredients: [],
+      id: this.props.id,
+      name: this.props.name,
+      ingredients: this.props.ingredients,
     }
   }
 
@@ -22,6 +23,10 @@ class Form extends Component {
     });
   }
 
+  _toggleForm(){
+    this.props.toggleForm(this.props.id);
+  }
+
   _handleRecipeUpdate(e){
     e.preventDefault();
     let form = {
@@ -29,14 +34,14 @@ class Form extends Component {
       name: this.state.name,
       ingredients: this.state.ingredients
     };
-    // console.log(form);
-    this.props.updateRecipe(form);
+    console.log(this.props.index);
+    this.props.updateRecipe(form, this.props.index);
   }
 
   render() {
     let formClasses = className({
       recipeform: true,
-      hidden: !this.props.showAddForm
+      hidden: !this.props.showForm
     });
 
     return(
@@ -65,7 +70,7 @@ class Form extends Component {
           <input
             type="button"
             value="Close"
-            onClick={this.props.toggleForm}
+            onClick={this._toggleForm.bind(this)}
           />
         </form>
       </div>

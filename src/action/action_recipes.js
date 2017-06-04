@@ -21,6 +21,14 @@ export function addRecipe(item) {
   };
 }
 
+export function editRecipe(item, index) {
+  return {
+    type: 'EDIT_RECIPE',
+    item,
+    index
+  };
+}
+
 export function removeRecipe(index) {
   return {
     type: 'REMOVE_RECIPE',
@@ -36,8 +44,9 @@ export function toggleNewForm() {
   }
 }
 
-export function toggleAddForm() {
+export function toggleEditForm(id) {
   return {
-    type: 'TOGGLE_EIDIT_FORM'
+    type: 'TOGGLE_EDIT_FORM',
+    id
   }
 }

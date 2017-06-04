@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import className from 'classnames';
 
+import EditForm from '../containers/EditForm';
+
 class RecipeItem extends Component {
 
   render() {
@@ -11,6 +13,13 @@ class RecipeItem extends Component {
 
     return (
       <div className="recipe_item">
+          <EditForm
+            id={this.props.id}
+            index={this.props.index}
+            name={this.props.name}
+            ingredients={this.props.ingredients}
+            showEditForm={this.props.showEditForm}
+          />
           <div className="recipe_header">
             <h4 onClick={() => this.props.onToggle(this.props.id)}>
               {this.props.name}
@@ -30,7 +39,7 @@ class RecipeItem extends Component {
               }
             </ul>
             <input type="button" value="Delete" onClick={() => this.props.onDelete(this.props.index)}/>
-            <input type="button" value="Edit" />
+            <input type="button" value="Edit" onClick={() => this.props.onToggleEdit(this.props.id)}/>
             <input type="button" value="Like" onClick={() => this.props.onLike(this.props.id)}/>
           </div>
         </div>

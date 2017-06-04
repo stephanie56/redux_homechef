@@ -19,8 +19,8 @@ An application built using React and Redux. This project is bootstrapped with cr
   - [ ] RecipeBox: a form of text inputs where users change values of existed recipe.
   - [ ] EditRecipe: a button to update existed recipes.
   - [x] DeleteRecipe: a button to remove existed recipes.
-- [ ] AddRecipe (displayed): a button to create new recipes.
-- [ ] RecipeForm (hidden): a form of text inputs where users submit a new recipe.
+- [x] AddRecipe (displayed): a button to create new recipes.
+- [x] RecipeForm (hidden): a form of text inputs where users submit a new recipe.
 
 2. States
 - showAddForm: `false`

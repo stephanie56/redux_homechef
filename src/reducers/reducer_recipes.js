@@ -2,8 +2,7 @@ import data from '../data/data';
 
 const initialState = {
   recipes: data,
-  showAddForm: true, // default: false
-  showEditForm: true, // default: false
+  showAddForm: false, // default: false
 }
 
 function recipes(state, action) {
@@ -14,6 +13,14 @@ function recipes(state, action) {
         return {
           ...state,
           recipes: [...state.recipes, action.item]
+        };
+    case 'EDIT_RECIPE':
+        return {
+          ...state,
+          recipes: [
+            ...state.recipes.slice(0, action.index),
+            action.item,
+            ...state.recipes.slice(action.index + 1)]
         };
     case 'REMOVE_RECIPE':
         return {
@@ -46,7 +53,17 @@ function recipes(state, action) {
       return {
         ...state,
         showAddForm: !state.showAddForm
-      }
+      };
+    case 'TOGGLE_EDIT_FORM':
+      return {
+        ...state,
+        recipes: state.recipes.map((recipe) => {
+        return {
+          ...recipe,
+          showEditForm: recipe.id === action.id ? !recipe.showEditForm : recipe.showEditForm
+          };
+        })
+      };
     default:
       return state;
   }

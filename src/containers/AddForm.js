@@ -21,7 +21,7 @@ class AddForm extends Component {
         <Form
           updateRecipe={this._addRecipe.bind(this)}
           toggleForm={this._toggleAddForm.bind(this)}
-          showAddForm={this.props.showAddForm}
+          showForm={this.props.showAddForm}
         />
     )
   };
