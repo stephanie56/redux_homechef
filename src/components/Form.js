@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import className from 'classnames';
+import className from 'classnames';
 
 class Form extends Component {
   constructor(props){
@@ -34,8 +34,13 @@ class Form extends Component {
   }
 
   render() {
+    let formClasses = className({
+      recipeform: true,
+      hidden: !this.props.showAddForm
+    });
+
     return(
-      <div className="recipeform" >
+      <div className={ formClasses } >
         <form onSubmit={this._handleRecipeUpdate.bind(this)}>
           <label>Recipe Name
             <input
@@ -60,6 +65,7 @@ class Form extends Component {
           <input
             type="button"
             value="Close"
+            onClick={this.props.toggleForm}
           />
         </form>
       </div>

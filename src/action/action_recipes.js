@@ -1,3 +1,5 @@
+/** RECIPE ACTION FACTORY **/
+
 export function toggleRecipe(id) {
   return {
     type: 'TOGGLE_RECIPE',
@@ -24,4 +26,18 @@ export function removeRecipe(index) {
     type: 'REMOVE_RECIPE',
     index
   };
+}
+
+/** FORM ACTION FACTORY **/
+
+export function toggleNewForm() {
+  return {
+    type: 'TOGGLE_NEW_FORM'
+  }
+}
+
+export function toggleAddForm() {
+  return {
+    type: 'TOGGLE_EIDIT_FORM'
+  }
 }

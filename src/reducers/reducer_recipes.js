@@ -42,6 +42,11 @@ function recipes(state, action) {
             };
           })
         };
+    case 'TOGGLE_NEW_FORM':
+      return {
+        ...state,
+        showAddForm: !state.showAddForm
+      }
     default:
       return state;
   }
