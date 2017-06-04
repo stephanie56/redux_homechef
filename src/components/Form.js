@@ -2,28 +2,58 @@ import React, { Component } from 'react';
 // import className from 'classnames';
 
 class Form extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      name: "",
+      ingredients: [],
+    }
+  }
+
+  _updateName(e){
+    this.setState({
+      name: e.target.value
+    });
+  }
+
+  _updateIngredients(e){
+    this.setState({
+      ingredients: e.target.value.split(',')
+    });
+  }
+
+  _handleRecipeUpdate(e){
+    e.preventDefault();
+    let form = {
+      id: this.state.name,
+      name: this.state.name,
+      ingredients: this.state.ingredients
+    };
+    console.log(form);
+  }
+
   render() {
     return(
       <div className="recipeform" >
-        <form>
+        <form onSubmit={this._handleRecipeUpdate.bind(this)}>
           <label>Recipe Name
             <input
               type="text"
               name="recipe_name"
-              value={this.props.name}
-              onChange={this.props.addName}
+              value={this.state.name}
+              onChange={this._updateName.bind(this)}
             />
-          </label>
+        </label>
           <label>
             <input
               type="text"
               name="recipe_ingredients"
-              value={this.props.ingredients}
-              onChange={this.props.addIngredients}
+              value={this.state.ingredients}
+              onChange={this._updateIngredients.bind(this)}
             />
           </label>
           <input
-            type="button"
+            type="submit"
             value="Submit"
           />
           <input
