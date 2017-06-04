@@ -14,6 +14,7 @@ class RecipeItem extends Component {
     return (
       <div className="recipe_item">
           <EditForm
+            id={this.props.id}
             name={this.props.name}
             ingredients={this.props.ingredients}
             showEditForm={this.props.showEditForm}

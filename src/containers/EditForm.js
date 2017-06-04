@@ -22,6 +22,7 @@ class EditForm extends Component {
           updateRecipe={this._addRecipe.bind(this)}
           toggleForm={this._toggleEditForm.bind(this)}
           showForm={this.props.showEditForm}
+          id={this.props.id}
           name={this.props.name}
           ingredients={this.props.ingredients}
         />

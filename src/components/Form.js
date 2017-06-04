@@ -5,6 +5,7 @@ class Form extends Component {
   constructor(props){
     super(props);
     this.state={
+      id: this.props.id,
       name: this.props.name,
       ingredients: this.props.ingredients,
     }
@@ -20,6 +21,10 @@ class Form extends Component {
     this.setState({
       ingredients: e.target.value.split(',')
     });
+  }
+
+  _toggleForm(){
+    this.props.toggleForm(this.props.id);
   }
 
   _handleRecipeUpdate(e){
@@ -65,7 +70,7 @@ class Form extends Component {
           <input
             type="button"
             value="Close"
-            onClick={this.props.toggleForm}
+            onClick={this._toggleForm.bind(this)}
           />
         </form>
       </div>
