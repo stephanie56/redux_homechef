@@ -15,10 +15,7 @@ class App extends Component {
       <Provider store={store}>
         <div className="app">
           <h1>React-Redux RecipeBox</h1>
-          <AddForm
-            name=""
-            ingredients=""
-          />
+          <AddForm />
           <RecipeList />
           <input type="button" value="Add Recipe" />
         </div>

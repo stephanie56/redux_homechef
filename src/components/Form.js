@@ -29,7 +29,8 @@ class Form extends Component {
       name: this.state.name,
       ingredients: this.state.ingredients
     };
-    console.log(form);
+    // console.log(form);
+    this.props.updateRecipe(form);
   }
 
   render() {
