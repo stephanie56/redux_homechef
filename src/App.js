@@ -7,6 +7,7 @@ import store from './store';
 // Components & Styles
 import './stylesheets/App.css';
 import RecipeList from './components/RecipeList';
+import AddForm from './containers/AddForm'
 
 class App extends Component {
   render() {
@@ -14,7 +15,12 @@ class App extends Component {
       <Provider store={store}>
         <div className="app">
           <h1>React-Redux RecipeBox</h1>
+          <AddForm
+            name=""
+            ingredients=""
+          />
           <RecipeList />
+          <input type="button" value="Add Recipe" />
         </div>
       </Provider>
     );

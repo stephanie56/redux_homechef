@@ -1,7 +1,9 @@
 import data from '../data/data';
 
 const initialState = {
-  recipes: data
+  recipes: data,
+  showAddForm: true, // default: false
+  showEditForm: true, // default: false
 }
 
 function recipes(state, action) {
