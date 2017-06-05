@@ -39,6 +39,7 @@ class RecipeList extends Component {
                     index={index}
                     name={recipe.name}
                     id={recipe.id}
+                    imgUrl={recipe.imgUrl}
                     ingredients={recipe.ingredients}
                     showRecipeItem={recipe.showRecipeItem}
                     showEditForm={recipe.showEditForm}

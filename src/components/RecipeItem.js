@@ -20,10 +20,16 @@ class RecipeItem extends Component {
             ingredients={this.props.ingredients}
             showEditForm={this.props.showEditForm}
           />
+
           <div className="recipe_header">
-            <h4 onClick={() => this.props.onToggle(this.props.id)}>
-              {this.props.name}
-            </h4>
+            <div className="recipe_img">
+              <img src={this.props.imgUrl}/>
+            </div>
+            <div className="recipe_name">
+              <h4 onClick={() => this.props.onToggle(this.props.id)}>
+                {this.props.name}
+              </h4>
+            </div>
           </div>
 
           <div className = {contentClasses}>

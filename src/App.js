@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="app">
-          <h1>React-Redux RecipeBox</h1>
+          <h1>Home <i className="fa fa-cutlery"></i> Chief</h1>
           <AddForm />
           <EditForm />
           <RecipeList />
