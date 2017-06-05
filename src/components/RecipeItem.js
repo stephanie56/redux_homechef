@@ -14,10 +14,12 @@ class RecipeItem extends Component {
     return (
       <div className="recipe_item">
           <EditForm
-            id={this.props.id}
             index={this.props.index}
+            id={this.props.id}
             name={this.props.name}
             ingredients={this.props.ingredients}
+            imgUrl={this.props.imgUrl}
+            favorite={this.props.favorite}
             showEditForm={this.props.showEditForm}
           />
 

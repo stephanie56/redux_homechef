@@ -26,6 +26,8 @@ class EditForm extends Component {
           id={this.props.id}
           name={this.props.name}
           ingredients={this.props.ingredients}
+          imgUrl={this.props.imgUrl}
+          favorite={this.props.favorite}
         />
     )
   };

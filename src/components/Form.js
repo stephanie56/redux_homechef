@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import className from 'classnames';
 
 class Form extends Component {
-  constructor(props){
-    super(props);
-  }
 
   _updateName(e){
     this.setState({
@@ -27,9 +24,12 @@ class Form extends Component {
     let form = {
       id: this.props.name,
       name: this.props.name,
-      ingredients: this.props.ingredients
+      imgUrl: this.props.imgUrl,
+      ingredients: this.props.ingredients,
+      favorite: this.props.favorite,
+      showRecipeItem: false,
+      showEditForm: false,
     };
-    console.log(this.props.index);
     this.props.updateRecipe(form, this.props.index);
   }
 
