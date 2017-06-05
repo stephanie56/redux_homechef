@@ -4,8 +4,9 @@ Home Chef is a recipe app built using ReactJS and Redux. This project is bootstr
 
 ### DEMO
 
-*App Preview Screenshots*:
-<img width="508" alt="screen shot 2017-06-04 at 10 36 08 pm" src="https://cloud.githubusercontent.com/assets/14033992/26768534/8559ec90-4976-11e7-9b3e-6c56a5c71776.png">
+*App Preview Screenshot*:
+
+<img width="508" alt="Home Chef App Screenshot" style="text-align:left;" src="https://cloud.githubusercontent.com/assets/14033992/26768534/8559ec90-4976-11e7-9b3e-6c56a5c71776.png">
 
 ### Get Started
 1. Install Node
@@ -38,7 +39,7 @@ npm start
 ### States
 - showAddForm: `bool`
 - recipes:
-```json
+```javascript
 {
   id: 1,
   name: 'Caramelized Onion Pork Chops',
