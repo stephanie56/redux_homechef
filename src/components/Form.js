@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import className from 'classnames';
 
 class Form extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      name: this.props.name,
+      ingredients: this.props.ingredients,
+      imgUrl: this.props.imgUrl
+    }
+  }
 
   _updateName(e){
     this.setState({
@@ -15,6 +23,12 @@ class Form extends Component {
     });
   }
 
+  _updateImg(e){
+    this.setState({
+      imgUrl: e.target.value
+    });
+  }
+
   _toggleForm(){
     this.props.toggleForm(this.props.id);
   }
@@ -23,9 +37,9 @@ class Form extends Component {
     e.preventDefault();
     let form = {
       id: this.props.name,
-      name: this.props.name,
-      imgUrl: this.props.imgUrl,
-      ingredients: this.props.ingredients,
+      name: this.state.name,
+      imgUrl: this.state.imgUrl,
+      ingredients: this.state.ingredients,
       favorite: this.props.favorite,
       showRecipeItem: false,
       showEditForm: false,
@@ -46,16 +60,24 @@ class Form extends Component {
             <input
               type="text"
               name="recipe_name"
-              value={this.props.name}
+              value={this.state.name}
               onChange={this._updateName.bind(this)}
             />
         </label>
-          <label>
+          <label>Ingredients
             <input
               type="text"
               name="recipe_ingredients"
-              value={this.props.ingredients}
+              value={this.state.ingredients}
               onChange={this._updateIngredients.bind(this)}
+            />
+          </label>
+          <label>Recipe Image Url
+            <input
+              type="text"
+              name="recipe_image"
+              value={this.state.imgUrl}
+              onChange={this._updateImg.bind(this)}
             />
           </label>
           <input

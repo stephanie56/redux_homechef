@@ -23,6 +23,8 @@ npm install
 ```bash
 npm start
 ```
+5. Open http://localhost:3000 in your browser
+
 
 ### To-Dos
 - [x] RecipeList (displayed): an index view where the names of all the recipes are visible.
