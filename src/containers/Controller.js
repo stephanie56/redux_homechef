@@ -15,7 +15,7 @@ class Controller extends Component {
           type="button" value="Add Recipe"
           onClick={() => this.props.toggleNewForm()}
           />
-          <input type="button" value="Filter"/>
+        <input type="button" value="My Favorites" />
         </div>
     )
   };

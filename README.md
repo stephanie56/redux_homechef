@@ -1,36 +1,51 @@
 # React-Redux RecipeBox
 
-An application built using React and Redux. This project is bootstrapped with create-react-app.
+Home Chef is a recipe app built using ReactJS and Redux. This project is bootstrapped with create-react-app.
+
+### DEMO
+
+*App Preview Screenshots*:
+<img width="508" alt="screen shot 2017-06-04 at 10 36 08 pm" src="https://cloud.githubusercontent.com/assets/14033992/26768534/8559ec90-4976-11e7-9b3e-6c56a5c71776.png">
 
 ### Get Started
-
-- git clone this repo https://github.com/stephanie56/redux_recipebox.git
-- install node
-- run `npm install`
-- run `npm start` to start server on localhost:3000
+1. Install Node
+2. Clone this repo
+```bash
+git clone https://github.com/stephanie56/redux_recipebox.git
+```
+3. Install independencies
+```bash
+cd redux_recipebox
+npm install
+```
+4. Start local server on port:3000
+```bash
+npm start
+```
 
 ### To-Dos
-1. App Structure
 - [x] RecipeList (displayed): an index view where the names of all the recipes are visible.
 
 - [x] RecipeItem: a recipe that has names and ingredients.
   - [x] RecipeHeader (displayed)
   - [x] RecipeContent (hidden): onClick to display (recipe.showRecipeItem: false => true)
-  - [ ] RecipeBox: a form of text inputs where users change values of existed recipe.
-  - [ ] EditRecipe: a button to update existed recipes.
+  - [x] RecipeBox: a form of text inputs where users change values of existed recipe.
+  - [x] EditRecipe: a button to update existed recipes.
   - [x] DeleteRecipe: a button to remove existed recipes.
 - [x] AddRecipe (displayed): a button to create new recipes.
 - [x] RecipeForm (hidden): a form of text inputs where users submit a new recipe.
 
-2. States
-- showAddForm: `false`
-- showEditForm: `false`
-- showRecipeItem: `false`
+### States
+- showAddForm: `bool`
 - recipes:
-[<br>
+```json
 {
-  id: 1, <br>
-  name: 'Caramelized Onion Pork Chops', <br>
-  ingredients: ['1 tablespoon vegetable oil', '4 pork loin chops', '3 teaspoons seasoning salt', '2 teaspoons black pepper'],<br>
-  }, ...
-]
+  id: 1,
+  name: 'Caramelized Onion Pork Chops',
+  imgUrl: "http://brightcove.vo.llnwd.net/d21/unsecured/media/1033249144001/201405/1567/1033249144001_3547969267001_Grilled-Pork-Chops.jpg?pubId=1033249144001",
+  ingredients: ['1 tablespoon vegetable oil', '4 pork loin chops', '3 teaspoons seasoning salt', '2 teaspoons black pepper'],
+  showRecipeItem: false,
+  showEditForm: false,
+  favorite: false
+}
+```
