@@ -4,11 +4,6 @@ import className from 'classnames';
 class Form extends Component {
   constructor(props){
     super(props);
-    this.state={
-      id: this.props.id,
-      name: this.props.name,
-      ingredients: this.props.ingredients,
-    }
   }
 
   _updateName(e){
@@ -30,9 +25,9 @@ class Form extends Component {
   _handleRecipeUpdate(e){
     e.preventDefault();
     let form = {
-      id: this.state.name,
-      name: this.state.name,
-      ingredients: this.state.ingredients
+      id: this.props.name,
+      name: this.props.name,
+      ingredients: this.props.ingredients
     };
     console.log(this.props.index);
     this.props.updateRecipe(form, this.props.index);
@@ -51,7 +46,7 @@ class Form extends Component {
             <input
               type="text"
               name="recipe_name"
-              value={this.state.name}
+              value={this.props.name}
               onChange={this._updateName.bind(this)}
             />
         </label>
@@ -59,7 +54,7 @@ class Form extends Component {
             <input
               type="text"
               name="recipe_ingredients"
-              value={this.state.ingredients}
+              value={this.props.ingredients}
               onChange={this._updateIngredients.bind(this)}
             />
           </label>
