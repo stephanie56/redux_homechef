@@ -4,6 +4,8 @@ Home Chef is a recipe app built using ReactJS and Redux. This project is bootstr
 
 ### DEMO
 
+Demo: https://stephanie56.github.io/redux_homechef/
+
 *App Preview Screenshot*:
 
 <img width="508" alt="Home Chef App Screenshot" style="text-align:left;" src="https://cloud.githubusercontent.com/assets/14033992/26768534/8559ec90-4976-11e7-9b3e-6c56a5c71776.png">
