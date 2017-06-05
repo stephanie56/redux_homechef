@@ -2,7 +2,8 @@ body {
   margin:0;
   padding:0;
   font-family: sans-serif;
-  background-color:#d93240;
+  height:100vh;
+  background: linear-gradient(30deg, #FDC147, #EE4E7A);
 }
 
 /** ======== Global ========= **/
@@ -14,13 +15,17 @@ h1 {
   text-align:center;
   font-weight:normal;
   font-family: 'Pacifico', cursive;
-  font-size:2.6em;
+  font-size:3em;
   color:#fff;
+  /*width:300px;
+  height:300px;
+  background-color:black;*/
 }
 
 input[type="button"],input[type="submit"] {
-  background: white;
-  padding:10px 20px;
+  background-color: #fff;
+  font-size:1em;
+  padding:16px 32px;
   border:1px grey solid;
   margin-right:5px;
 }
@@ -37,7 +42,7 @@ input[type="text"] {
 .app {
   max-width:80%;
   min-width:600px;
-  background-color:#d93240;
+  /*background-color:#d93240;*/
   padding:10px;
   margin:10px auto;
 }
@@ -45,6 +50,7 @@ input[type="text"] {
 /** ======== RecipeBox ========= **/
 .recipe_item {
   margin-bottom: 10px;
+  background-color: #fff;
 }
 
 .recipe_header {
@@ -59,7 +65,8 @@ input[type="text"] {
   height:100px;
   border-radius:100%;
   display:block;
-  background-color:red;
+  background-color:#eee;
+  border:1px solid #777;
   float:left;
 }
 
@@ -75,26 +82,31 @@ input[type="text"] {
 
 /** ======== RecipeBox Content ========= **/
 .recipe_content {
-  background-color:white;
-  padding:14px;
-  margin-top:20px;
+  padding:0 30px 40px;
 }
 
 .recipe_content h2 {
   text-align: center;
-  font-size: 1.2em;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.4em;
   font-weight: 400;
+}
+
+.recipe_content hr {
+  width:40%;
 }
 
 .recipe_content ul {
   list-style: none;
   padding:0;
+  margin-bottom: 40px;
 }
 
 .recipe_content li {
   margin-bottom:5px;
-  padding:10px;
-  border:1px grey solid;
+  padding:20px;
+  font-size: 1.2em;
+  border-bottom:1px #eee solid;
 }
 
 /** ======== Recipe Form ========= **/
@@ -107,4 +119,19 @@ input[type="text"] {
   width:50%;
   left:25%;
   top:10%;
+}
+
+/** ======== Control Pannel ========= **/
+.control_pannel {
+  margin-top: 50px;
+}
+.control_pannel input[type="button"] {
+  background-color: #1e1d66;
+  color:#fff;
+  font-size:1.2em;
+  padding:16px 32px;
+  border-radius:4px;
+  border:1px #1e1d66 solid;
+  margin-right:10px;
+  cursor: pointer;
 }
