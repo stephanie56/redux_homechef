@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import className from 'classnames';
-
+import Form from './Form.js';
 import EditForm from '../containers/EditForm';
 
 class RecipeItem extends Component {
@@ -13,15 +13,20 @@ class RecipeItem extends Component {
 
     return (
       <div className="recipe_item">
-          <EditForm
-            index={this.props.index}
-            id={this.props.id}
-            name={this.props.name}
-            ingredients={this.props.ingredients}
-            imgUrl={this.props.imgUrl}
-            favorite={this.props.favorite}
-            showEditForm={this.props.showEditForm}
-          />
+        {
+          this.props.showEditForm ? (
+            <EditForm
+              index={this.props.index}
+              id={this.props.id}
+              name={this.props.name}
+              ingredients={this.props.ingredients}
+              imgUrl={this.props.imgUrl}
+              favorite={this.props.favorite}
+              showEditForm={this.props.showEditForm}
+            />
+          ) : null
+        }
+
 
           <div className="recipe_header">
             <div className="recipe_img">

@@ -29,6 +29,7 @@ class RecipeList extends Component {
 
 
   render() {
+    console.log(this.props.recipes.map(recipe => recipe.showEditForm));
     return (
         <div className="recipe_list">
           {

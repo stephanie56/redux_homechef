@@ -34,9 +34,7 @@ class EditForm extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    recipes: state.recipes
-  }
+  return {}
 }
 
 const mapDispatchToProps = (dispatch) => {

@@ -23,12 +23,14 @@ function recipes(state, action) {
             ...state.recipes.slice(action.index + 1)]
         };
     case 'REMOVE_RECIPE':
+        console.log(action);
+        const newRecipes = [
+          ...state.recipes.slice(0, action.index),
+          ...state.recipes.slice(action.index + 1)];
         return {
           ...state,
-          recipes: [
-            ...state.recipes.slice(0, action.index),
-            ...state.recipes.slice(action.index + 1)]
-          };
+          recipes: newRecipes
+        };
     case 'TOGGLE_RECIPE':
         return {
           ...state,
@@ -58,9 +60,9 @@ function recipes(state, action) {
       return {
         ...state,
         recipes: state.recipes.map((recipe) => {
-        return {
-          ...recipe,
-          showEditForm: recipe.id === action.id ? !recipe.showEditForm : recipe.showEditForm
+          return {
+            ...recipe,
+            showEditForm: recipe.id === action.id ? !recipe.showEditForm : recipe.showEditForm
           };
         })
       };

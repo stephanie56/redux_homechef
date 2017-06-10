@@ -9,22 +9,26 @@ class Form extends Component {
       ingredients: this.props.ingredients,
       imgUrl: this.props.imgUrl
     }
+    console.log(props.name, ' should show: ', this.props.name);
   }
 
   _updateName(e){
     this.setState({
+      ...this.state,
       name: e.target.value
     });
   }
 
   _updateIngredients(e){
     this.setState({
+      ...this.state,
       ingredients: e.target.value.split(',')
     });
   }
 
   _updateImg(e){
     this.setState({
+      ...this.state,
       imgUrl: e.target.value
     });
   }
