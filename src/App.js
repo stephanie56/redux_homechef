@@ -11,13 +11,21 @@ import AddForm from './containers/AddForm';
 import RecipeList from './containers/RecipeList';
 import Controller from './containers/Controller';
 
+const Header = () => (
+  <div className="header">
+    <h1>Home <i className="fa fa-cutlery"></i> Chef</h1>
+  </div>
+);
+
 const App = () => (
   <Provider store={store}>
-    <div className="app">
-      <h1>Home <i className="fa fa-cutlery"></i> Chef</h1>
-      <AddForm />
-      <RecipeList />
-      <Controller />
+    <div>
+      <Header />
+      <div className="app">
+        <AddForm />
+        <RecipeList />
+        <Controller />
+      </div>
     </div>
   </Provider>
 );
