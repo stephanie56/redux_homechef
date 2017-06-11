@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-// actions
+// Redux
+import { connect } from 'react-redux';
 import { addRecipe, toggleNewForm } from '../action/action_recipes';
 
+// Component
 import Form from '../components/Form';
 
 class AddForm extends Component {
 
-  _addRecipe(item){
-    this.props.addRecipe(item);
-  }
-
+  // Method to turn on/off AddForm
   _toggleAddForm(){
     this.props.toggleNewForm();
+  }
+
+  // Method to push a new recipe object to state.recipes
+  _addRecipe(item){
+    this.props.addRecipe(item);
   }
 
   render(){
@@ -21,7 +24,7 @@ class AddForm extends Component {
         <Form
           updateRecipe={this._addRecipe.bind(this)}
           toggleForm={this._toggleAddForm.bind(this)}
-          showForm={this.props.showAddForm}
+          isFormShown={this.props.isAddFormShown}
         />
     )
   };
@@ -29,14 +32,14 @@ class AddForm extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    showAddForm: state.showAddForm,
+    isAddFormShown: state.isAddFormShown,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addRecipe: (item) => dispatch(addRecipe(item)),
-    toggleNewForm: () => dispatch(toggleNewForm())
+    toggleNewForm: () => dispatch(toggleNewForm()),
+    addRecipe: (item) => dispatch(addRecipe(item))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AddForm);

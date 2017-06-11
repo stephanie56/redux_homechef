@@ -9,52 +9,53 @@ class Form extends Component {
       ingredients: this.props.ingredients,
       imgUrl: this.props.imgUrl
     }
-    console.log(props.name, ' should show: ', this.props.name);
   }
 
+  // onChange form input to update local state.name
   _updateName(e){
     this.setState({
-      ...this.state,
       name: e.target.value
     });
   }
 
+  // onChange form input to update local state.ingredients
   _updateIngredients(e){
     this.setState({
-      ...this.state,
       ingredients: e.target.value.split(',')
     });
   }
 
+  // onChange form input to update local state.imgUrl
   _updateImg(e){
     this.setState({
-      ...this.state,
       imgUrl: e.target.value
     });
   }
 
+  // Method to turn on/off form
   _toggleForm(){
     this.props.toggleForm(this.props.id);
   }
 
+  // Method to submit updated recipe form
   _handleRecipeUpdate(e){
     e.preventDefault();
-    let form = {
+    let updatedRecipe = {
       id: this.props.name,
       name: this.state.name,
       imgUrl: this.state.imgUrl,
       ingredients: this.state.ingredients,
       favorite: this.props.favorite,
-      showRecipeItem: false,
-      showEditForm: false,
+      isRecipeItemShown: false,
+      isEditFormShown: false,
     };
-    this.props.updateRecipe(form, this.props.index);
+    this.props.updateRecipe(updatedRecipe, this.props.index);
   }
 
   render() {
     let formClasses = className({
       recipeform: true,
-      hidden: !this.props.showForm
+      hidden: !this.props.isFormShown
     });
 
     return(
@@ -67,7 +68,7 @@ class Form extends Component {
               value={this.state.name}
               onChange={this._updateName.bind(this)}
             />
-        </label>
+          </label>
           <label>Ingredients
             <input
               type="text"

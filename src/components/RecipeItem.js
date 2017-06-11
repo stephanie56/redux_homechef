@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import className from 'classnames';
-import Form from './Form.js';
+
+// Component
 import EditForm from '../containers/EditForm';
 
 class RecipeItem extends Component {
@@ -8,13 +9,13 @@ class RecipeItem extends Component {
   render() {
     let contentClasses = className({
         recipe_content: true,
-        hidden: !this.props.showRecipeItem, // hidden: true
+        hidden: !this.props.isRecipeItemShown
       });
 
     return (
       <div className="recipe_item">
         {
-          this.props.showEditForm ? (
+          this.props.isEditFormShown ? (
             <EditForm
               index={this.props.index}
               id={this.props.id}
@@ -22,7 +23,7 @@ class RecipeItem extends Component {
               ingredients={this.props.ingredients}
               imgUrl={this.props.imgUrl}
               favorite={this.props.favorite}
-              showEditForm={this.props.showEditForm}
+              isEditFormShown={this.props.isEditFormShown}
             />
           ) : null
         }
@@ -30,7 +31,7 @@ class RecipeItem extends Component {
 
           <div className="recipe_header">
             <div className="recipe_img">
-              <img src={this.props.imgUrl}/>
+              <img src={this.props.imgUrl} alt={this.props.name}/>
             </div>
             <div className="recipe_name">
               <h4 onClick={() => this.props.onToggle(this.props.id)}>

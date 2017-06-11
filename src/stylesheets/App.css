@@ -17,9 +17,6 @@ h1 {
   font-family: 'Pacifico', cursive;
   font-size:3em;
   color:#fff;
-  /*width:300px;
-  height:300px;
-  background-color:black;*/
 }
 
 input[type="button"],input[type="submit"] {
@@ -42,7 +39,6 @@ input[type="text"] {
 .app {
   max-width:80%;
   min-width:600px;
-  /*background-color:#d93240;*/
   padding:10px;
   margin:10px auto;
 }
@@ -55,7 +51,6 @@ input[type="text"] {
 
 .recipe_header {
   background-color:#fff;
-  /*border:1px solid #91aa86;*/
   padding:30px;
   height:100px;
 }

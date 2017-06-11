@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// actions
-import { toggleRecipe, toggleEditForm, likeRecipe, removeRecipe } from '.././action/action_recipes';
+// Actions
+import { toggleRecipe, toggleEditForm, likeRecipe, removeRecipe } from '../action/action_recipes';
 
-// components
-import RecipeItem from './RecipeItem';
+// Components
+import RecipeItem from '../components/RecipeItem';
 
 class RecipeList extends Component {
 
-  // methods
+  // Methods
   _handleToggle(id){
     this.props.toggleRecipe(id);
   }
@@ -26,10 +26,7 @@ class RecipeList extends Component {
     this.props.removeRecipe(index);
   }
 
-
-
   render() {
-    console.log(this.props.recipes.map(recipe => recipe.showEditForm));
     return (
         <div className="recipe_list">
           {
@@ -43,8 +40,8 @@ class RecipeList extends Component {
                     imgUrl={recipe.imgUrl}
                     favorite={recipe.favorite}
                     ingredients={recipe.ingredients}
-                    showRecipeItem={recipe.showRecipeItem}
-                    showEditForm={recipe.showEditForm}
+                    isRecipeItemShown={recipe.isRecipeItemShown}
+                    isEditFormShown={recipe.isEditFormShown}
                     onToggle={this._handleToggle.bind(this)}
                     onToggleEdit={this._handleToggleEdit.bind(this)}
                     onLike={this._handleFavorite.bind(this)}
@@ -64,7 +61,7 @@ const mapStateToProps = (state) => ({
     recipes: state.recipes,
 });
 
-// methods that response to events triggered by users
+// Methods that interact with recipe items and edit form
 const mapDispatchToProps = (dispatch) => ({
     toggleRecipe: (id) => dispatch(toggleRecipe(id)),
     toggleEditForm: (id) => dispatch(toggleEditForm(id)),

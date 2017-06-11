@@ -23,7 +23,7 @@ class Controller extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    showAddForm: state.showAddForm,
+    isAddFormShown: state.isAddFormShown,
   }
 }
 

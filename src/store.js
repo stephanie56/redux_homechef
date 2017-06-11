@@ -1,4 +1,6 @@
 import { createStore } from 'redux';
+
+// Reducer
 import recipes from './reducers/reducer_recipes';
 
 const store = createStore(

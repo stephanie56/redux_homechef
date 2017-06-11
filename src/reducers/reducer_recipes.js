@@ -2,7 +2,7 @@ import data from '../data/data';
 
 const initialState = {
   recipes: data,
-  showAddForm: false, // default: false
+  isAddFormShown: false, // default: false
 }
 
 function recipes(state, action) {
@@ -23,13 +23,11 @@ function recipes(state, action) {
             ...state.recipes.slice(action.index + 1)]
         };
     case 'REMOVE_RECIPE':
-        console.log(action);
-        const newRecipes = [
-          ...state.recipes.slice(0, action.index),
-          ...state.recipes.slice(action.index + 1)];
         return {
           ...state,
-          recipes: newRecipes
+          recipes: [
+            ...state.recipes.slice(0, action.index),
+            ...state.recipes.slice(action.index + 1)]
         };
     case 'TOGGLE_RECIPE':
         return {
@@ -37,7 +35,7 @@ function recipes(state, action) {
           recipes: state.recipes.map((recipe) => {
           return {
             ...recipe,
-            showRecipeItem: recipe.id === action.id ? !recipe.showRecipeItem : recipe.showRecipeItem
+            isRecipeItemShown: recipe.id === action.id ? !recipe.isRecipeItemShown : recipe.isRecipeItemShown
             };
           })
         };
@@ -54,7 +52,7 @@ function recipes(state, action) {
     case 'TOGGLE_NEW_FORM':
       return {
         ...state,
-        showAddForm: !state.showAddForm
+        isAddFormShown: !state.isAddFormShown
       };
     case 'TOGGLE_EDIT_FORM':
       return {
@@ -62,7 +60,7 @@ function recipes(state, action) {
         recipes: state.recipes.map((recipe) => {
           return {
             ...recipe,
-            showEditForm: recipe.id === action.id ? !recipe.showEditForm : recipe.showEditForm
+            isEditFormShown: recipe.id === action.id ? !recipe.isEditFormShown : recipe.isEditFormShown
           };
         })
       };

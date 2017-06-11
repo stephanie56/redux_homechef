@@ -22,7 +22,7 @@ class EditForm extends Component {
           index={this.props.index}
           updateRecipe={this._editRecipe.bind(this)}
           toggleForm={this._toggleEditForm.bind(this)}
-          showForm={this.props.showEditForm}
+          isFormShown={this.props.isEditFormShown}
           id={this.props.id}
           name={this.props.name}
           ingredients={this.props.ingredients}

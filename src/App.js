@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
-
-// Redux
+// React
+import React from 'react';
 import { Provider } from 'react-redux';
+
+// Store
 import store from './store';
 
-// Components & Styles
+// Styles & Components
 import './stylesheets/App.css';
-import RecipeList from './components/RecipeList';
 import AddForm from './containers/AddForm';
-import EditForm from './containers/EditForm';
-import Controller from './containers/Controller'
+import RecipeList from './containers/RecipeList';
+import Controller from './containers/Controller';
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div className="app">
-          <h1>Home <i className="fa fa-cutlery"></i> Chef</h1>
-          <AddForm />
-          <EditForm />
-          <RecipeList />
-          <Controller />
-        </div>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <div className="app">
+      <h1>Home <i className="fa fa-cutlery"></i> Chef</h1>
+      <AddForm />
+      <RecipeList />
+      <Controller />
+    </div>
+  </Provider>
+);
 
 export default App;
