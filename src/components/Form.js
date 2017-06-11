@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import className from 'classnames';
 
 class Form extends Component {
   constructor(props){
@@ -42,60 +41,59 @@ class Form extends Component {
     e.preventDefault();
     let updatedRecipe = {
       id: this.props.name,
-      name: this.state.name,
-      imgUrl: this.state.imgUrl,
-      ingredients: this.state.ingredients,
-      favorite: this.props.favorite,
+      name: this.state.name || "New Recipe",
+      imgUrl: this.state.imgUrl || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpMc-S7EBxQ69f29vpOGl49o9xeVVp6_yWrFACSXddn1IO4nWeszgVf7k",
+      ingredients: this.state.ingredients || [],
+      favorite: this.props.favorite || false,
       isRecipeItemShown: false,
       isEditFormShown: false,
     };
     this.props.updateRecipe(updatedRecipe, this.props.index);
+    this._toggleForm(this.props.id);
   }
 
   render() {
-    let formClasses = className({
-      recipeform: true,
-      hidden: !this.props.isFormShown
-    });
 
     return(
-      <div className={ formClasses } >
-        <form onSubmit={this._handleRecipeUpdate.bind(this)}>
-          <label>Recipe Name
+      this.props.isFormShown ? (
+        <div className="recipeform" >
+          <form onSubmit={this._handleRecipeUpdate.bind(this)}>
+            <label>Recipe Name
+              <input
+                type="text"
+                name="recipe_name"
+                value={this.state.name}
+                onChange={this._updateName.bind(this)}
+              />
+            </label>
+            <label>Ingredients
+              <input
+                type="text"
+                name="recipe_ingredients"
+                value={this.state.ingredients}
+                onChange={this._updateIngredients.bind(this)}
+              />
+            </label>
+            <label>Recipe Image Url
+              <input
+                type="text"
+                name="recipe_image"
+                value={this.state.imgUrl}
+                onChange={this._updateImg.bind(this)}
+              />
+            </label>
             <input
-              type="text"
-              name="recipe_name"
-              value={this.state.name}
-              onChange={this._updateName.bind(this)}
+              type="submit"
+              value="Submit"
             />
-          </label>
-          <label>Ingredients
             <input
-              type="text"
-              name="recipe_ingredients"
-              value={this.state.ingredients}
-              onChange={this._updateIngredients.bind(this)}
+              type="button"
+              value="Close"
+              onClick={this._toggleForm.bind(this)}
             />
-          </label>
-          <label>Recipe Image Url
-            <input
-              type="text"
-              name="recipe_image"
-              value={this.state.imgUrl}
-              onChange={this._updateImg.bind(this)}
-            />
-          </label>
-          <input
-            type="submit"
-            value="Submit"
-          />
-          <input
-            type="button"
-            value="Close"
-            onClick={this._toggleForm.bind(this)}
-          />
-        </form>
-      </div>
+          </form>
+        </div>
+      ) : null
     )
   }
 }
