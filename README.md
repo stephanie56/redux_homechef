@@ -8,8 +8,8 @@ Demo: https://stephanie56.github.io/redux_homechef/
 
 *App Preview Screenshot*:
 
-<img width="300" alt="Home Chef App Screenshot" style="text-align:left; margin-right:10px; display:inline;" src="./docs/screenshots/home.png">
-<img width="300" alt="Home Chef App Screenshot" style="text-align:left; display:inline;" src="./docs/screenshots/recipe.png">
+<img width="500" alt="Home Chef App Screenshot" style="text-align:left; margin-right:10px; display:inline;" src="./docs/screenshots/home.png">
+
 
 ### Get Started
 1. Install Node
