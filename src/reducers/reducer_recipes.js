@@ -7,7 +7,6 @@ const initialState = {
 
 function recipes(state, action) {
   if(!state) state = initialState;
-  // make a copy of the state
   switch (action.type) {
     case 'ADD_RECIPE':
         return {

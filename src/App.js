@@ -1,9 +1,6 @@
 // React
 import React from 'react';
-import { Provider } from 'react-redux';
 
-// Store
-import store from './store';
 
 // Styles & Components
 import './stylesheets/App.css';
@@ -18,7 +15,6 @@ const Header = () => (
 );
 
 const App = () => (
-  <Provider store={store}>
     <div>
       <Header />
       <div className="app">
@@ -27,7 +23,6 @@ const App = () => (
         <Controller />
       </div>
     </div>
-  </Provider>
 );
 
 export default App;
