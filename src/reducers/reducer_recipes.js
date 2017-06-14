@@ -1,7 +1,7 @@
 import data from '../data/data';
 
 const initialState = {
-  recipes: localStorage.getItem('recipes')|| data,
+  recipes: data,
   isAddFormShown: false, // default: false
 }
 
