@@ -1,12 +1,11 @@
 import data from '../data/data';
 
 const initialState = {
-  recipes: data,
+  recipes: localStorage.getItem('recipes')|| data,
   isAddFormShown: false, // default: false
 }
 
-function recipes(state, action) {
-  if(!state) state = initialState;
+function recipes(state = initialState, action) {
   switch (action.type) {
     case 'ADD_RECIPE':
         return {
