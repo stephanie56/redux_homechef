@@ -1,3 +1,9 @@
+export function initApp() {
+  return {
+    type:'INIT_APP'
+  }
+}
+
 /** RECIPE ACTION FACTORY **/
 
 export function toggleRecipe(id) {

@@ -1,33 +1,36 @@
 import data from '../data/data';
+import localStorageInterface from '../localstorageInterface/index';
 
 const initialState = {
   recipes: data,
   isAddFormShown: false, // default: false
 }
 
-function recipes(state, action) {
-  if(!state) state = initialState;
+function recipes(state = initialState, action) {
+  const newState = {...state};
   switch (action.type) {
+    case 'INIT_APP':
+      return {
+        ...state,
+        recipes: JSON.parse(localStorageInterface.getCachedRecipes()) || data
+      };
     case 'ADD_RECIPE':
-        return {
-          ...state,
-          recipes: [...state.recipes, action.item]
-        };
+        newState.recipes = [...state.recipes, action.item];
+        localStorageInterface.cacheRecipes(newState.recipes);
+        return newState;
     case 'EDIT_RECIPE':
-        return {
-          ...state,
-          recipes: [
+        newState.recipes = [
             ...state.recipes.slice(0, action.index),
             action.item,
-            ...state.recipes.slice(action.index + 1)]
-        };
+            ...state.recipes.slice(action.index + 1)];
+        localStorageInterface.cacheRecipes(newState.recipes);
+        return newState;
     case 'REMOVE_RECIPE':
-        return {
-          ...state,
-          recipes: [
+        newState.recipes = [
             ...state.recipes.slice(0, action.index),
-            ...state.recipes.slice(action.index + 1)]
-        };
+            ...state.recipes.slice(action.index + 1)];
+        localStorageInterface.cacheRecipes(newState.recipes);
+        return newState;
     case 'TOGGLE_RECIPE':
         return {
           ...state,
