@@ -69,3 +69,9 @@ export function showFavorites() {
     type: 'SHOW_FAVORITES',
   }
 }
+
+export function showAll() {
+  return {
+    type: 'SHOW_ALL',
+  }
+}

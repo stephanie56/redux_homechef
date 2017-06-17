@@ -62,15 +62,13 @@ function recipes(state = initialState, action) {
           })
         };
     case 'LIKE_RECIPE':
+    newState.recipes = state.recipes.map((recipe) => {
         return {
-          ...state,
-          recipes: state.recipes.map((recipe) => {
-            return {
-              ...recipe,
-              favorite: recipe.id === action.id ? !recipe.favorite : recipe.favorite
-            };
-          })
-        };
+          ...recipe,
+          favorite: recipe.id === action.id ? !recipe.favorite : recipe.favorite
+        };})
+    localStorageInterface.cacheRecipes(newState.recipes);
+    return newState;
     case 'TOGGLE_NEW_FORM':
       return {
         ...state,
