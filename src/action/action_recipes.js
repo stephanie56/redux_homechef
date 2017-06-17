@@ -4,7 +4,7 @@ export function getCache() {
   }
 }
 
-export function clearCache(){
+export function clearCache() {
   return {
     type: 'CLEAR_CACHE'
   }
@@ -60,5 +60,12 @@ export function toggleEditForm(id) {
   return {
     type: 'TOGGLE_EDIT_FORM',
     id
+  }
+}
+
+/** FILTER ACTION FACTORY **/
+export function showFavorites() {
+  return {
+    type: 'SHOW_FAVORITES',
   }
 }
