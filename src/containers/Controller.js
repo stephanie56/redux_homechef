@@ -19,7 +19,7 @@ class Controller extends Component {
           type="button" value="Clear Caches"
           onClick={() => this.props.clearCache()}
           />
-          <input type="button" value="My Favorites"
+        <input type="button" value="All Recipes"
           onClick={() => this.props.showAll()}
           />
           <input type="button" value="My Favorites"

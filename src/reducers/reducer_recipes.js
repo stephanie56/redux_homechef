@@ -1,28 +1,36 @@
 import data from '../data/data';
 import localStorageInterface from '../localstorageInterface/index';
 
+const VISIBILITY_TYPE = {
+  SHOW_ALL      : 'SHOW_ALL',
+  SHOW_FAVORITES: 'SHOW_FAVORITES',
+}
+
 const initialState = {
   recipes: data,
   isAddFormShown: false, // default: false
-  visibilityFilter: 'SHOW_ALL',
+  visibilityFilter: VISIBILITY_TYPE.SHOW_ALL,
 }
 
 function recipes(state = initialState, action) {
   const newState = {...state};
   switch (action.type) {
     case 'SHOW_ALL':
-        return {
-          ...state,
-          visibilityFilter: 'SHOW_ALL'
-        };
+      return {
+        ...state,
+        recipes: state.recipes.filter((recipe) => {
+          return recipe.favorite === true;
+        }),
+        visibilityFilter: 'SHOW_FAVORITES'
+      };
     case 'SHOW_FAVORITES':
-        return {
-          ...state,
-          recipes: state.recipes.filter((recipe) => {
-            return recipe.favorite === true;
-          }),
-          visibilityFilter: 'SHOW_FAVORITES'
-        };
+      return {
+        ...state,
+        // recipes: state.recipes.filter((recipe) => {
+        //   return recipe.favorite === true;
+        // }),
+        visibilityFilter: 'SHOW_FAVORITES'
+      };
     case 'GET_CACHE':
       return {
         ...state,
