@@ -14,6 +14,12 @@ function recipes(state = initialState, action) {
         ...state,
         recipes: JSON.parse(localStorageInterface.getCachedRecipes()) || data
       };
+    case 'CLEAR_CACHE':
+      localStorageInterface.clearCachedRecipes();
+      return {
+        ...state,
+        recipes: data
+      };
     case 'ADD_RECIPE':
         newState.recipes = [...state.recipes, action.item];
         localStorageInterface.cacheRecipes(newState.recipes);

@@ -4,6 +4,12 @@ export function initApp() {
   }
 }
 
+export function clearCache(){
+  return {
+    type: 'CLEAR_CACHE'
+  }
+}
+
 /** RECIPE ACTION FACTORY **/
 
 export function toggleRecipe(id) {

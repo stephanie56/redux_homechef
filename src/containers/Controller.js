@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // actions
-import { toggleNewForm } from '../action/action_recipes';
+import { toggleNewForm, clearCache } from '../action/action_recipes';
 
 // import Form from '../components/Form';
 
@@ -15,7 +15,11 @@ class Controller extends Component {
           type="button" value="Add Recipe"
           onClick={() => this.props.toggleNewForm()}
           />
-        <input type="button" value="My Favorites" />
+          <input
+          type="button" value="Clear Caches"
+          onClick={() => this.props.clearCache()}
+          />
+          <input type="button" value="My Favorites" />
         </div>
     )
   };
@@ -29,7 +33,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleNewForm: () => dispatch(toggleNewForm())
+    toggleNewForm: () => dispatch(toggleNewForm()),
+    clearCache: () => dispatch(clearCache())
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Controller);
