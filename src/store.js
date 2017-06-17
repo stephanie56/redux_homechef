@@ -5,6 +5,8 @@ import logger from 'redux-logger';
 // Reducer
 import reducer from './reducers/reducer_recipes';
 
+
+
 const store = createStore(
   reducer,
   applyMiddleware(logger)

@@ -10,6 +10,15 @@ import store from './store';
 import App from './App';
 
 export default class AppProvider extends Component {
+
+  componentWillMount(){
+      console.log('saved recipe is', localStorage.getItem('savedRecipes'));
+  }
+
+  componentWillUnMount(){
+    localStorage.setItem('savedRecipes', JSON.stringify(store.getState().recipes));
+  }
+
   render() {
     return (
       <Provider store={store}>
