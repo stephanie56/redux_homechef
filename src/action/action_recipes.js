@@ -1,6 +1,6 @@
-export function initApp() {
+export function getCache() {
   return {
-    type:'INIT_APP'
+    type:'GET_CACHE'
   }
 }
 

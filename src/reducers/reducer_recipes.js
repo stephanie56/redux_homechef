@@ -9,7 +9,7 @@ const initialState = {
 function recipes(state = initialState, action) {
   const newState = {...state};
   switch (action.type) {
-    case 'INIT_APP':
+    case 'GET_CACHE':
       return {
         ...state,
         recipes: JSON.parse(localStorageInterface.getCachedRecipes()) || data

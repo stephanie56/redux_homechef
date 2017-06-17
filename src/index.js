@@ -11,12 +11,6 @@ import store from './store';
 import App from './App';
 
 export default class AppProvider extends Component {
-
-  
-  // componentWillUnmount(){
-  //   localStorage.setItem('savedRecipes', JSON.stringify(store.getState().recipes));
-  // }
-
   render() {
     return (
       <Provider store={store}>

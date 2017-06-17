@@ -11,7 +11,7 @@ import RecipeList from './containers/RecipeList';
 import Controller from './containers/Controller';
 
 // import action
-import { initApp } from './action/action_recipes';
+import { getCache } from './action/action_recipes';
 
 
 const Header = () => (
@@ -22,7 +22,7 @@ const Header = () => (
 
 class App extends Component {
   componentWillMount(){
-      this.props.initApp();
+      this.props.getCache();
   }
 
   render(){
@@ -45,7 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    initApp: () => dispatch(initApp()),
+    getCache: () => dispatch(getCache()),
   }
 }
 
