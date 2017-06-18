@@ -30,7 +30,10 @@ class RecipeList extends Component {
     return (
         <div className="recipe_list">
           {
-              this.props.recipes.map((recipe, index) => {
+              this.props.recipes.filter((recipe) => {
+                return (this.props.visibilityFilter === 'SHOW_ALL' ? recipe : recipe.favorite === true);
+                // return recipe.favorite === false;
+              }).map((recipe, index) => {
               return (
                   <RecipeItem
                     key={index}
@@ -59,6 +62,7 @@ class RecipeList extends Component {
 // props for RecipeList
 const mapStateToProps = (state) => ({
     recipes: state.recipes,
+    visibilityFilter: state.visibilityFilter
 });
 
 // Methods that interact with recipe items and edit form
