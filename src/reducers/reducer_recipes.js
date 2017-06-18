@@ -18,10 +18,7 @@ function recipes(state = initialState, action) {
     case 'SHOW_ALL':
       return {
         ...state,
-        recipes: state.recipes.filter((recipe) => {
-          return recipe.favorite === true;
-        }),
-        visibilityFilter: 'SHOW_FAVORITES'
+        visibilityFilter: VISIBILITY_TYPE.SHOW_ALL
       };
     case 'SHOW_FAVORITES':
       return {
@@ -29,7 +26,7 @@ function recipes(state = initialState, action) {
         // recipes: state.recipes.filter((recipe) => {
         //   return recipe.favorite === true;
         // }),
-        visibilityFilter: 'SHOW_FAVORITES'
+        visibilityFilter: VISIBILITY_TYPE.SHOW_FAVORITES
       };
     case 'GET_CACHE':
       return {
