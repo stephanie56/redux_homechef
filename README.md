@@ -41,6 +41,12 @@ npm start
 - [x] AddRecipe (displayed): a button to create new recipes.
 - [x] RecipeForm (hidden): a form of text inputs where users submit a new recipe.
 
+- [ ] Use router
+- [ ] Slit reducer
+- [ ] Hook up with remote database
+- [ ] Only cache recipe id instead of the whole recipe
+
+
 ### States
 - showAddForm: `bool`
 - recipes:
