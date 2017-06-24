@@ -1,7 +1,10 @@
 
+
 export default {
   cacheRecipes: (recipes) => {
-    return localStorage.setItem('savedRecipes', JSON.stringify(recipes));
+    const savedRecipes = recipes.map(recipe => ({...recipe, isRecipeItemShown: false, isEditFormShown: false,
+    }));
+    return localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
   },
   getCachedRecipes: () => {
     return localStorage.getItem('savedRecipes');
